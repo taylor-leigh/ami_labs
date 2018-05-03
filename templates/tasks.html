@@ -1,0 +1,25 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Task List{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='tasks.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Task list</h1>
+    <div id="tasklist">
+
+    </div>
+    <div id="inserttask">
+<form class="form-inline">
+    <div class="form-group">
+        Task:
+        <input type="text" class="form-control" name="description"/>
+    </div>
+    <button class="form-control" id="addtask">Add</button>
+</form>
+    </div>
+</div>
+{% endblock %}

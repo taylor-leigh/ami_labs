@@ -8,10 +8,18 @@ Last updated on Apr 30, 2018
 """
 
 from flask import Flask, jsonify, abort, request, Response, render_template
+from flask_bootstrap import Bootstrap
 
 import db_interaction
 
 app = Flask(__name__)
+Bootstrap(app)
+
+# ---------- FRONT-END Single-page application ------------
+
+@app.route('/tasks.html')
+def tasks():
+    return render_template("tasks.html")
 
 # ---------- REST SERVER ----------
 @app.route('/api/v1.0/tasks', methods=['GET'])
