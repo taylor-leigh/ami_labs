@@ -10,10 +10,14 @@ $(document).ready(function () {
         }
     }) ;
 
-    $("form").submit( function(){
-        var description = $("input[name='description']").val() ;
+    $("#addForm").submit( function(){
+        var description = $("#taskDescription").val() ;
+
 
         return false ; // don't submit the form
     }) ;
-
 });
+
+function addTask(){
+
+}
